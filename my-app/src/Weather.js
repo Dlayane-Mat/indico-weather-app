@@ -52,7 +52,9 @@ export default function Weather(props) {
           />
         </form>
         <h1>{city}</h1>
-        <FormattedDate date={forecast.date} />
+        <div className="date">
+          <FormattedDate date={forecast.date} />
+        </div>
         <div className="WeatherFahrenheit">
           <WeatherFahrenheit celsius={forecast.temperature} />
         </div>
@@ -65,8 +67,8 @@ export default function Weather(props) {
           <div className="description">{forecast.description}</div>
         </div>
         <div className="current">
-          <span>Humidity:{forecast.humidity}%</span>
-          <span>Wind:{forecast.wind}km/h</span>
+          <div>💧♒︎ : {forecast.humidity}%</div>
+          <span>༄꩜𖦹༄ : {forecast.wind}km/h</span>
         </div>
       </div>
     );
