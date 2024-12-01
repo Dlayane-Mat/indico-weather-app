@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherFahrenheit from "./WeatherFahrenheit";
 import axios from "axios";
-import "./WeatherFahrenheit";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -36,40 +36,48 @@ export default function Weather(props) {
   }
   if (forecast.ready) {
     return (
-      <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Enter a city"
-            className="form-control"
-            autoFocus="on"
-            onChange={handleCityChange}
-          />
-          <input
-            type="submit"
-            value="Search"
-            className="btn btn-primary w-100"
-          />
-        </form>
-        <h1>{city}</h1>
-        <div className="date">
-          <FormattedDate date={forecast.date} />
+      <div className="container">
+        <div className="submit">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+              autoFocus="on"
+              onChange={handleCityChange}
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary w-100"
+            />
+          </form>
         </div>
-        <div className="WeatherFahrenheit">
-          <WeatherFahrenheit celsius={forecast.temperature} />
-        </div>
-        <div className="clearfix">
-          <img
-            src={forecast.iconUrl}
-            alt={forecast.description}
-            className="float-left"
-          />
+        <div className="Weather">
+          <h1>{city}</h1>
+          <div className="clearfix">
+            <img
+              src={forecast.iconUrl}
+              alt={forecast.description}
+              className="float-left"
+            />
+          </div>
+          <div className="WeatherFahrenheit">
+            <WeatherFahrenheit celsius={forecast.temperature} />
+          </div>
+          <div className="date">
+            <FormattedDate date={forecast.date} />
+          </div>
+
           <div className="description">{forecast.description}</div>
+
+          <div className="current">
+            <span className="pink">💧♒︎ : {forecast.humidity}%</span>
+
+            <span className="pink">༄꩜: {forecast.wind}km/h</span>
+          </div>
         </div>
-        <div className="current">
-          <div>💧♒︎ : {forecast.humidity}%</div>
-          <span>༄꩜𖦹༄ : {forecast.wind}km/h</span>
-        </div>
+        <WeatherForecast />
       </div>
     );
   } else {

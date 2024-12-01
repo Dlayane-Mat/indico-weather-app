@@ -1,46 +1,86 @@
 .Weather {
-  background-image: url("gradient.jfif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  border: 2px solid rgb(130, 87, 112);
+  border: 1px solid rgb(130, 87, 112);
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 7px;
+  max-width: 576px;
+  background-image: linear-gradient(to bottom right, #d16ba5, #86a8e7, #5ffbf1);
 }
+
 h1 {
   font-family: sophia;
-  font-size: 45px;
+  font-size: 23px;
+  position: relative;
+  right: -129px;
+  bottom: -15px;
 }
 .description {
-  text-align: center;
   position: relative;
-  top: -58px;
-  left: -10px;
+  left: 430px;
+  top: -295px;
   font-size: 22px;
   opacity: 0.6;
   font-family: sophia;
 }
 
 .Weather .WeatherFahrenheit {
-  font-size: 150px;
+  font-size: 67px;
+  position: relative;
+  top: -100px;
+  right: -65px;
   padding: 0;
   margin: 0;
   opacity: 0.8;
 }
 .Weather .unit {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   position: relative;
-  top: -88px;
+  top: -38px;
   margin-left: 5px;
 }
 .Weather img {
+  position: relative;
+  top: -70px;
   padding: 0;
   margin: 0;
-  width: 95px;
-  line-height: 0;
-  top: -40px;
-  left: -20px;
-  position: relative;
+  width: 180px;
+  left: -30px;
 }
-.Weather .date {
-  bottom: -200px;
+
+.submit {
+  border: 1px solid rgb(130, 87, 112);
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+.form-control {
+  padding: 10px 50px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgb(182, 125, 235);
+  border: 1px;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: rgb(182, 125, 235);
+  border: 1px;
+  font-family: fantasy;
+}
+.current {
+  position: relative;
+  left: 400px;
+  top: -350px;
+  font-size: 13px;
+}
+.date {
+  position: relative;
+  left: 425px;
+  top: -250px;
+  font-size: 13px;
+}
+.pink {
+  margin: 5px;
 }
