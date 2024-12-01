@@ -74,7 +74,7 @@ export default function Weather(props) {
           <div className="current">
             <span className="pink">💧♒︎ : {forecast.humidity}%</span>
 
-            <span className="pink">༄꩜: {forecast.wind}km/h</span>
+            <span className="pink">: {forecast.wind}km/h</span>
           </div>
         </div>
         <WeatherForecast />
